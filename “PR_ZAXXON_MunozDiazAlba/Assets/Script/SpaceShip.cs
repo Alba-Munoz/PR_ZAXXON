@@ -4,35 +4,72 @@ using UnityEngine;
 
 public class SpaceShip : MonoBehaviour
 {
-    float speed;
+
+    [SerializeField] float desplSpeed;
+
+    float limiteR = 10;
+    float limiteL =-10;
+    float limiteU = 14;
+    float limiteD = 1;
+
+    bool inLimitH = true;
+    bool inLimitV = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        speed = 2f;
+        desplSpeed = 4f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) | Input.GetKey(KeyCode.UpArrow))
+        print(Input.GetAxis("Horizontal"));
+        print(Input.GetAxis("Vertical"));
+
+        float desplH = Input.GetAxis("Horizontal");
+        float desplV = Input.GetAxis("Vertical");
+
+        float posX = transform.position.x;
+        float posY = transform.position.y;
+
+       
+        //Horizontal//
+
+        if (inLimitH)
         {
-            transform.position += new Vector3(0, 1, 0) * Time.deltaTime * speed;
-        }
-        else if (Input.GetKey(KeyCode.S) | Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position += new Vector3(0, -1, 0) * Time.deltaTime * speed;
-        }
-        else if (Input.GetKey(KeyCode.D) | Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * speed;
-        }
-        else if (Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * speed;
+            transform.Translate(Vector3.right * Time.deltaTime * desplH * desplSpeed, Space.World);
         }
 
 
-        /*float desplH = Input.GetKey(KeyCode.W);
-        float desplV = Input.GetAxis("Vertical");*/
+        if (inLimitV)
+        {
+            transform.Translate(Vector3.up * Time.deltaTime * desplV * desplSpeed, Space.World);
+        }
+
+        if ((posX > limiteR && desplH > 0 ) || ( posX < limiteL && desplH < 0))
+        {
+           
+            inLimitH = false;
+        }
+        else
+        {
+            
+            inLimitH = true;
+        }
+
+
+        //Vertical//
+
+        if ((posY > limiteU && desplV > 0) || (posY < limiteD && desplV < 0))
+        {
+            inLimitV = false;
+        }
+
+        else
+        {
+            inLimitV = true;
+        }
+
     }
 }
