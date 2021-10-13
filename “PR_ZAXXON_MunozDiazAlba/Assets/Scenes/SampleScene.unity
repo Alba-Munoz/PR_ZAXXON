@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &559751904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559751906}
+  - component: {fileID: 559751905}
+  m_Layer: 0
+  m_Name: Instanciador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &559751905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559751904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f45d2e7abdaa847b9cc4a9ca7f4277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaculo: {fileID: 4685399979510467061, guid: 9e0a14f5a9830894297b59cd3f7bf3ba, type: 3}
+  initPos: {fileID: 559751906}
+--- !u!4 &559751906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559751904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1, y: 6.5599995, z: 152.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,8 +544,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009784733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 52.3}
-  m_LocalScale: {x: 1.5089, y: 1, z: 12.912696}
+  m_LocalPosition: {x: 0, y: 0, z: 145}
+  m_LocalScale: {x: 3, y: 1, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -726,6 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e7a4f0a99c8b440a97096fd12dbd9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  desplSpeed: 0
 --- !u!4 &1394857988
 Transform:
   m_ObjectHideFlags: 0

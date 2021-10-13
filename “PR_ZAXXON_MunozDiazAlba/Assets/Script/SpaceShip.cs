@@ -18,7 +18,7 @@ public class SpaceShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        desplSpeed = 4f;
+        desplSpeed = 6f;
     }
 
     // Update is called once per frame
