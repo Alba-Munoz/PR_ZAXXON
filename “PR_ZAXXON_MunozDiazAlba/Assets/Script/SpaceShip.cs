@@ -18,7 +18,7 @@ public class SpaceShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        desplSpeed = 6f;
+        desplSpeed = 7f;
     }
 
     // Update is called once per frame
@@ -71,5 +71,16 @@ public class SpaceShip : MonoBehaviour
             inLimitV = true;
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+      
+        if (other.gameObject.layer == 6)
+        {
+            //initGameScript.spaceshipSpeed = 0f;
+            Destroy(gameObject);
+
+        }
     }
 }

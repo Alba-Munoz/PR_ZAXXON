@@ -8,20 +8,25 @@ public class instancia : MonoBehaviour
 
     // Start is called before the first frame update
     [SerializeField] GameObject obstaculo;
-   
-    [SerializeField] Transform initPos;
+    [SerializeField] GameObject obstaculo_2;
+    [SerializeField] Transform initPosOb1;
+    [SerializeField] Transform initPosOb2;
 
+    int level;
     float intervalo;
 
-    float speed;
- 
     [SerializeField] float distanciaEntreObstaculos;
 
     [SerializeField] float distPrimerObstaculo;
 
+    [SerializeField] float distPrimerObst = 50f;
+
+    float speed;
+
     void Start()
     {
         
+
         distanciaEntreObstaculos = 25f;
 
         distPrimerObstaculo = 45f;
@@ -30,7 +35,11 @@ public class instancia : MonoBehaviour
 
 
         intervalo = 1f;
+
+        CrearColumnasIniciales();
+
         StartCoroutine("CrearObstaculos");
+        StartCoroutine("CerarObstaculos2");
 
     }
    
@@ -40,19 +49,51 @@ public class instancia : MonoBehaviour
         
     }
 
-    IEnumerator CrearObstaculos()
+    void CrearColumnasIniciales()
     {
-        while (true)
+        float numColumnasIniciales = (transform.position.z - distPrimerObst) / distanciaEntreObstaculos;
+
+        numColumnasIniciales = Mathf.Round(numColumnasIniciales);
+
+        for (float n = distPrimerObst; n < transform.position.z; n += distanciaEntreObstaculos)
         {
            
-            Vector3 instPos = new Vector3(Random.Range(-10f, 10f), 0f, initPos.position.z);
-          
-            Instantiate(obstaculo, instPos, Quaternion.identity);
-            yield return new WaitForSeconds(intervalo);
+            Vector3 initColPos = new Vector3(Random.Range(-10f, 10f), 6.55f, n);
+            Instantiate(obstaculo , initColPos, Quaternion.identity);
 
         }
     }
 
+
+    IEnumerator CrearObstaculos()
+    {
+        while (true)
+        {
+          
+
+            Vector3 instPos = new Vector3(Random.Range(-10f, 10f), 6.55f, initPosOb1.position.z);
+          
+            Instantiate(obstaculo, instPos, Quaternion.identity);
+            yield return new WaitForSeconds(intervalo);
+
+
+
+        }
+
+      
+
+    }
+    IEnumerator CrearObstaculos2()
+    {
+        while (true)
+        {
+
+            Vector3 instPos = new Vector3(Random.Range(-10f, 10f), 6.55f, initPosOb2.position.z);
+
+            Instantiate(obstaculo_2, instPos, Quaternion.identity);
+            yield return new WaitForSeconds(intervalo);
+        }
+    }
 }
 
 

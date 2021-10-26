@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class obstaculo : MonoBehaviour
+public class obstaculo_2 : MonoBehaviour
 {
-   
     float speed;
-
     // Start is called before the first frame update
     void Start()
     {
-        speed = 10f;
-
-
+        speed = 20f;
     }
 
     // Update is called once per frame
@@ -28,7 +24,4 @@ public class obstaculo : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-    
 }
