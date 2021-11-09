@@ -113,6 +113,8 @@ public class InitGameScript : MonoBehaviour
 
         GameObject.Find("Nave").SetActive(false);
 
+        SceneManager.LoadScene(0);
+
     }
 
     public void Chocar(GameObject other)
