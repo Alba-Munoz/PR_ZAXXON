@@ -6,6 +6,7 @@ public class SpaceShip : MonoBehaviour
 {
 
     [SerializeField] float desplSpeed;
+    [SerializeField] GameObject Nave;
 
     float limiteR = 10;
     float limiteL =-10;
@@ -14,18 +15,23 @@ public class SpaceShip : MonoBehaviour
 
     bool inLimitH = true;
     bool inLimitV = true;
+    InitGameScript initGameScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        desplSpeed = 7f;
+        transform.position = new Vector3(0f, 2.3f, 0f);
+        //Le asigno un valor a la velocidad de desplazamiento
+        desplSpeed = 30f;
+
+        initGameScript = GameObject.Find("Initgame").GetComponent<InitGameScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        print(Input.GetAxis("Horizontal"));
-        print(Input.GetAxis("Vertical"));
+        //print(Input.GetAxis("Horizontal"));
+        //print(Input.GetAxis("Vertical"));
 
         float desplH = Input.GetAxis("Horizontal");
         float desplV = Input.GetAxis("Vertical");
@@ -73,14 +79,22 @@ public class SpaceShip : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-      
-        if (other.gameObject.layer == 6)
-        {
-            //initGameScript.spaceshipSpeed = 0f;
-            Destroy(gameObject);
 
+    
+
+        private void OnTriggerEnter(Collider other)
+        {
+            //print("Ostia");
+            if (other.gameObject.layer == 0)
+            {
+
+                initGameScript.SendMessage("Morir");
+                Nave.SetActive(false);
+                //Destroy(gameObject);
+
+            }
         }
-    }
+    
+
+
 }

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class instancia2 : MonoBehaviour
+public class instancia_2 : MonoBehaviour
 {
+    InitGameScript initGameScript;
+
     [SerializeField] GameObject obstaculo_2;
 
     [SerializeField] Transform initPos;
@@ -15,12 +17,14 @@ public class instancia2 : MonoBehaviour
 
     [SerializeField] float distPrimerObstaculo;
 
-    [SerializeField] float distPrimerObst = 50f;
+    [SerializeField] float distPrimerObst;
 
     float speed;
     // Start is called before the first frame update
     void Start()
     {
+        initGameScript = GameObject.Find("Initgame").GetComponent<InitGameScript>();
+
         distanciaEntreObstaculos = 25f;
 
         distPrimerObstaculo = 45f;
@@ -28,7 +32,6 @@ public class instancia2 : MonoBehaviour
         float numParedInicial = (transform.position.z - distPrimerObstaculo) / distanciaEntreObstaculos;
 
 
-        intervalo = 1f;
 
         CrearParedInicial();
 
@@ -39,7 +42,7 @@ public class instancia2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void CrearParedInicial()
@@ -55,8 +58,9 @@ public class instancia2 : MonoBehaviour
             Instantiate(obstaculo_2, initColPos, Quaternion.identity);
 
         }
-    }
 
+
+    }
 
     IEnumerator CrearObstaculos()
     {
@@ -66,14 +70,15 @@ public class instancia2 : MonoBehaviour
 
             Vector3 instPos = new Vector3(Random.Range(-10f, 10f), 1.8f, initPos.position.z);
 
+            intervalo = distanciaEntreObstaculos / initGameScript.spaceshipSpeed;
+
+
             Instantiate(obstaculo_2, instPos, Quaternion.identity);
             yield return new WaitForSeconds(intervalo);
 
 
 
         }
-
-
 
     }
 }

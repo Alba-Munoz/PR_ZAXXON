@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class instancia : MonoBehaviour
 {
+    InitGameScript initGameScript; 
 
-
-    // Start is called before the first frame update
     [SerializeField] GameObject obstaculo;
-    [SerializeField] GameObject obstaculo_2;
-    [SerializeField] Transform initPosOb1;
-    [SerializeField] Transform initPosOb2;
+
+    [SerializeField] Transform initPos;
 
     int level;
     float intervalo;
@@ -19,27 +17,25 @@ public class instancia : MonoBehaviour
 
     [SerializeField] float distPrimerObstaculo;
 
-    [SerializeField] float distPrimerObst = 50f;
+    [SerializeField] float distPrimerObst;
 
     float speed;
 
+
     void Start()
     {
-        
-
+        initGameScript = GameObject.Find("Initgame").GetComponent<InitGameScript>();
         distanciaEntreObstaculos = 25f;
 
         distPrimerObstaculo = 45f;
 
-        float numColumnasIniciales = (transform.position.z - distPrimerObstaculo) / distanciaEntreObstaculos;
+        float numParedInicial = (transform.position.z - distPrimerObstaculo) / distanciaEntreObstaculos;
 
 
-        intervalo = 1f;
-
-        CrearColumnasIniciales();
+       
+        CrearParedInicial();
 
         StartCoroutine("CrearObstaculos");
-        StartCoroutine("CerarObstaculos2");
 
     }
    
@@ -48,52 +44,44 @@ public class instancia : MonoBehaviour
     {
         
     }
-
-    void CrearColumnasIniciales()
+    
+    void CrearParedInicial()
     {
-        float numColumnasIniciales = (transform.position.z - distPrimerObst) / distanciaEntreObstaculos;
+        float numParedInicial = (transform.position.z - distPrimerObst) / distanciaEntreObstaculos;
 
-        numColumnasIniciales = Mathf.Round(numColumnasIniciales);
+        numParedInicial = Mathf.Round(numParedInicial);
 
         for (float n = distPrimerObst; n < transform.position.z; n += distanciaEntreObstaculos)
         {
-           
-            Vector3 initColPos = new Vector3(Random.Range(-10f, 10f), 6.55f, n);
-            Instantiate(obstaculo , initColPos, Quaternion.identity);
+
+            Vector3 initColPos = new Vector3(Random.Range(-10f, 10f), 1.8f, n);
+            Instantiate(obstaculo, initColPos, Quaternion.identity);
 
         }
-    }
 
+
+    }
 
     IEnumerator CrearObstaculos()
     {
         while (true)
         {
-          
 
-            Vector3 instPos = new Vector3(Random.Range(-10f, 10f), 6.55f, initPosOb1.position.z);
-          
+
+            Vector3 instPos = new Vector3(Random.Range(-10f, 10f), 1.8f, initPos.position.z);
+
+            intervalo = distanciaEntreObstaculos / initGameScript.spaceshipSpeed;
+
             Instantiate(obstaculo, instPos, Quaternion.identity);
+            //print(intervalo);
             yield return new WaitForSeconds(intervalo);
 
 
 
         }
 
-      
-
     }
-    IEnumerator CrearObstaculos2()
-    {
-        while (true)
-        {
 
-            Vector3 instPos = new Vector3(Random.Range(-10f, 10f), 6.55f, initPosOb2.position.z);
-
-            Instantiate(obstaculo_2, instPos, Quaternion.identity);
-            yield return new WaitForSeconds(intervalo);
-        }
-    }
 }
 
 
