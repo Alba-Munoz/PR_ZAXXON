@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 90d2efce2fa42634da1c0a0d3aa7d49d
+guid: 7e5d5685f8694dc49b4670d067d2748e
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -5350007238205115906
-    second: boton
-  - first:
-      213: 6486329856321769463
-    second: boton2
-  - first:
-      213: -30594090272471809
-    second: boton3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -122,74 +113,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: boton
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 683
-        width: 863
-        height: 178
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 1, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef1f30d23c4f0c5b0800000000000000
-      internalID: -5350007238205115906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boton2
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 420
-        width: 874
-        height: 195
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ffc11663a2140a50800000000000000
-      internalID: 6486329856321769463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boton3
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 219
-        width: 869
-        height: 204
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 3, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff4451546de439ff0800000000000000
-      internalID: -30594090272471809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d77f0247478ee9c45ad038fed7f72f2c
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

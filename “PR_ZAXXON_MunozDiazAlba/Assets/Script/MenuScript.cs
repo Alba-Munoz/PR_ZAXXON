@@ -21,4 +21,14 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(escena);
     }
+
+    public void GoHihgScores(int escena)
+    {
+        SceneManager.LoadScene(escena);
+    }
+
+    public void GoConfiguracion(int escena)
+    {
+        SceneManager.LoadScene(escena);
+    }
 }
