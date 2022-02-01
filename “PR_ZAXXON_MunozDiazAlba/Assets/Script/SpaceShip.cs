@@ -10,7 +10,7 @@ public class SpaceShip : MonoBehaviour
 
     float limiteR = 10;
     float limiteL =-10;
-    float limiteU = 14;
+    float limiteU = 7;
     float limiteD = 1;
 
     bool inLimitH = true;

@@ -6,7 +6,7 @@ public class instancia_2 : MonoBehaviour
 {
     InitGameScript initGameScript;
 
-    [SerializeField] GameObject obstaculo_2;
+    [SerializeField] GameObject maggellan_ex;
 
     [SerializeField] Transform initPos;
 
@@ -54,8 +54,8 @@ public class instancia_2 : MonoBehaviour
         for (float n = distPrimerObst; n < transform.position.z; n += distanciaEntreObstaculos)
         {
 
-            Vector3 initColPos = new Vector3(Random.Range(-10f, 10f), 1.8f, n);
-            Instantiate(obstaculo_2, initColPos, Quaternion.identity);
+            Vector3 initColPos = new Vector3(Random.Range(-10f, 10f), Random.Range(1.6f, 7f), n);
+            Instantiate(maggellan_ex, initColPos, Quaternion.identity);
 
         }
 
@@ -68,12 +68,12 @@ public class instancia_2 : MonoBehaviour
         {
 
 
-            Vector3 instPos = new Vector3(Random.Range(-10f, 10f), 1.8f, initPos.position.z);
+            Vector3 instPos = new Vector3(Random.Range(-10f, 10f), Random.Range(1.6f, 7f),initPos.position.z) ;
 
             intervalo = distanciaEntreObstaculos / initGameScript.spaceshipSpeed;
 
 
-            Instantiate(obstaculo_2, instPos, Quaternion.identity);
+            Instantiate(maggellan_ex, instPos, Quaternion.identity);
             yield return new WaitForSeconds(intervalo);
 
 

@@ -54,7 +54,7 @@ public class instancia : MonoBehaviour
         for (float n = distPrimerObst; n < transform.position.z; n += distanciaEntreObstaculos)
         {
 
-            Vector3 initColPos = new Vector3(Random.Range(-10f, 10f), 1.8f, n);
+            Vector3 initColPos = new Vector3(Random.Range(-10f, 10f), 1f, n);
             Instantiate(obstaculo, initColPos, Quaternion.identity);
 
         }

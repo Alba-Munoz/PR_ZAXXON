@@ -20,7 +20,7 @@ public class Camara : MonoBehaviour
 
     
 
-        transform.position = new Vector3(playerPosition.position.x, playerPosition.position.y, playerPosition.position.z - 10);
+        transform.position = new Vector3(playerPosition.position.x, playerPosition.position.y + 1.5f, playerPosition.position.z - 10);
       
         
 
