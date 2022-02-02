@@ -11,9 +11,11 @@ public class InitGameScript : MonoBehaviour
 
     // nivel
     public int levelGame;
+    [SerializeField] Text nivel;
 
- 
+    [SerializeField] Text distText;
 
+    static float dist;
 
     //Puntuación
     static float score;
@@ -25,7 +27,7 @@ public class InitGameScript : MonoBehaviour
     bool alive;
 
     //UI
- 
+    float tiempoActual;
 
 
     [SerializeField] float vidas;
@@ -44,12 +46,14 @@ public class InitGameScript : MonoBehaviour
 
         maxSpeed = 100f;
 
+        distText.text =  0f + "m";
      
 
         alive = true;
 
-        float tiempoPasado = Time.time;
+        tiempoActual = Time.time;
 
+        
    
     }
 
@@ -62,19 +66,11 @@ public class InitGameScript : MonoBehaviour
             spaceshipSpeed += 0.001f;
         }
 
-        float tiempo = Time.time;
+        
         //print(Mathf.Round(tiempo));
 
-        score = Mathf.Round(tiempo) * spaceshipSpeed;
-       
-        if (score > 500 && score < 1000)
-        {
-            levelGame = 1;
-        }
-        else if (score > 1000)
-        {
-            levelGame = 2;
-        }
+     
+     
 
         UpdateUI();
         
@@ -82,24 +78,51 @@ public class InitGameScript : MonoBehaviour
 
     void UpdateUI()
     {
-        float tiempo = Time.time;
+        float tiempo = Time.time - tiempoActual
+            ;
         //print(Mathf.Round(tiempo));
-        if (spaceshipSpeed != 0)
+        /*if (dist != 0)
         {
-            score = Mathf.Round(tiempo) * spaceshipSpeed;
+            score = Mathf.Round(tiempo) + dist;
+        }*/
+
+        if (dist == 0)
+        {
+            levelGame = 0;
+        }
+        else
+        {
+            score = Mathf.Round(tiempo) + dist;
         }
 
-    
         if (score > 500 && score < 1000)
         {
             levelGame = 1;
         }
-        else if (score > 1000)
+
+        else if (score > 1000 && score < 1500)
         {
             levelGame = 2;
+        } 
+        else if (score > 1500 && score < 2000)
+        {
+            levelGame = 3;
+        }
+        else if (score > 2000 && score < 2500)
+        {
+            levelGame = 4;
+        }
+        else if (score > 2500 && score < 3000)
+        {
+            levelGame = 5;
         }
 
-     
+        dist = Mathf.Round(tiempo) * spaceshipSpeed;
+
+        distText.text = Mathf.Round(dist) + "m";
+
+        nivel.text = "Level =" + levelGame;
+      
     }
 
     //Morir
@@ -108,6 +131,8 @@ public class InitGameScript : MonoBehaviour
         //print("La yukición fué realizada");
         alive = false;
         spaceshipSpeed = 0f;
+
+        
         instancia instanciadorObst = GameObject.Find("Instanciador").GetComponent<instancia>();
         
 
