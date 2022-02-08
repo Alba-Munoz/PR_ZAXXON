@@ -21,5 +21,6 @@ public class GameOverScript : MonoBehaviour
     public void VolverInicio(int escena)
     {
         SceneManager.LoadScene(escena);
+
     }
 }
