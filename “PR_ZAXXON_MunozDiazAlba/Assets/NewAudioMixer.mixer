@@ -67,6 +67,7 @@ AudioMixerController:
   - guids:
     - 0e446de54543b814a87e4cdbac88fcef
     - b4eda95e4dff25c4db1f88d05ad0b217
+    - 05c07afe0471fa44a8ee6253d50a4651
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -81,6 +82,7 @@ AudioMixerGroupController:
   m_GroupID: 0e446de54543b814a87e4cdbac88fcef
   m_Children:
   - {fileID: -468915067251805944}
+  - {fileID: 2297756470970279940}
   m_Volume: 87fd09f1927a9f042afb3f5bc9b73c90
   m_Pitch: 3d850ae84295f1b4a957788983981ee8
   m_Send: 00000000000000000000000000000000
@@ -116,6 +118,25 @@ AudioMixerSnapshotController:
   m_FloatValues:
     5470a220c2f979e47a998d980398629b: -17.938717
   m_TransitionOverrides: {}
+--- !u!243 &2297756470970279940
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Musica fondo juego
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 05c07afe0471fa44a8ee6253d50a4651
+  m_Children: []
+  m_Volume: 910d2e79a7843da4e8354fa2eaabb883
+  m_Pitch: 533cc2af054a0bf4eb0e81c1c9cc5af7
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 8659911112732909123}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &7234151440465198623
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -135,3 +156,17 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &8659911112732909123
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: d1cb9a81859b39d41822589edf77acb8
+  m_EffectName: Attenuation
+  m_MixLevel: d4306634379b2f246830cccf42a80836
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0

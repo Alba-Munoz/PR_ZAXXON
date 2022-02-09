@@ -630,6 +630,7 @@ GameObject:
   - component: {fileID: 631975290}
   - component: {fileID: 631975289}
   - component: {fileID: 631975293}
+  - component: {fileID: 631975294}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -737,6 +738,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073db4de7897c6947a68627ca5d32bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boton: {fileID: 631975294}
+  clipBtn: {fileID: 8300000, guid: 660d2d2504a8b1b4797d22f99b8a54d9, type: 3}
+--- !u!82 &631975294
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631975288}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -468915067251805944, guid: 5270da9173892854fbab4f79ac2ef478, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 660d2d2504a8b1b4797d22f99b8a54d9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 1
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &738072422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1165,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -5350007238205115906, guid: 90d2efce2fa42634da1c0a0d3aa7d49d, type: 3}
     m_PressedSprite: {fileID: 6486329856321769463, guid: 90d2efce2fa42634da1c0a0d3aa7d49d, type: 3}
-    m_SelectedSprite: {fileID: -30594090272471809, guid: 90d2efce2fa42634da1c0a0d3aa7d49d, type: 3}
+    m_SelectedSprite: {fileID: -5350007238205115906, guid: 90d2efce2fa42634da1c0a0d3aa7d49d, type: 3}
     m_DisabledSprite: {fileID: -5350007238205115906, guid: 90d2efce2fa42634da1c0a0d3aa7d49d, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1081,7 +1180,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 631975293}
         m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
-        m_MethodName: VolverInicio
+        m_MethodName: CargarEscena
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
