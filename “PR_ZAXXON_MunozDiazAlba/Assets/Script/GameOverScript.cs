@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
+    [SerializeField] AudioSource boton;
+
+    [SerializeField] AudioClip clipBtn;
+
+    int escenaAcargar;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +22,18 @@ public class GameOverScript : MonoBehaviour
     {
         
     }
-
-    public void VolverInicio(int escena)
+    public void CargarEscena(int escena)
     {
-        SceneManager.LoadScene(escena);
 
+        boton.PlayOneShot(clipBtn);
+        //Cargo la escena, pero al cabo de un tiempo, lo que dura el sonido del botón
+        Invoke("CargarEscenaAhoraSi", clipBtn.length);
+        escenaAcargar = escena;
     }
+
+    void CargarEscenaAhoraSi()
+    {
+        SceneManager.LoadScene(escenaAcargar);
+    }
+  
 }
