@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class InitGameScript : MonoBehaviour
 {
-
+    [SerializeField] GameObject Ship;
     public float spaceshipSpeed;
 
     // nivel
@@ -31,6 +31,10 @@ public class InitGameScript : MonoBehaviour
 
 
     [SerializeField] float vidas;
+
+    [SerializeField] GameObject explos;
+    [SerializeField] Transform ShipP;
+        
 
     // Start is called before the first frame update
     void Start()
@@ -133,15 +137,28 @@ public class InitGameScript : MonoBehaviour
         spaceshipSpeed = 0f;
 
         
-        instancia instanciadorObst = GameObject.Find("Instanciador").GetComponent<instancia>();
-        
+       
 
-        GameObject.Find("Nave").SetActive(false);
+        Vector3 explosPos = new Vector3(ShipP.position.x, ShipP.position.y, ShipP.position.z);
+        Instantiate(explos, explosPos, Quaternion.identity);
+
+
+        Invoke("GameOver", 1f);
+
+
+       
+
+    }
+
+    void GameOver()
+    {
+        instancia instanciadorObst = GameObject.Find("Instanciador").GetComponent<instancia>();
+
+        Ship.SetActive(false);
 
         SceneManager.LoadScene(0);
 
     }
-
     public void Chocar(GameObject other)
     {
         print("Me he chocado con :" + other.tag);
@@ -154,6 +171,8 @@ public class InitGameScript : MonoBehaviour
         else
         {
             Destroy(other);
+            
+
         }
     }
 

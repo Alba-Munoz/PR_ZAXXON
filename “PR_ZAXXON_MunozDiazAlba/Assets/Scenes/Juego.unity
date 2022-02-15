@@ -766,12 +766,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d0e357dbb5dc4ca413584147e6bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ship: {fileID: 1394857986}
   spaceshipSpeed: 30
   levelGame: 0
   nivel: {fileID: 1792285344}
   distText: {fileID: 353612546}
   maxSpeed: 0
   vidas: 3
+  explos: {fileID: 4219471157836730039, guid: 61ad0973f4c89a6448e4859f813b5c41, type: 3}
+  ShipP: {fileID: 1394857988}
 --- !u!4 &1362802366
 Transform:
   m_ObjectHideFlags: 0
@@ -812,7 +815,7 @@ AudioSource:
   m_GameObject: {fileID: 1389020811}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2297756470970279940, guid: 5270da9173892854fbab4f79ac2ef478, type: 2}
   m_audioClip: {fileID: 8300000, guid: ea9945a994d7edc4fa5b29ea1358ad87, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
