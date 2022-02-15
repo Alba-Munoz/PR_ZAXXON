@@ -34,11 +34,15 @@ public class InitGameScript : MonoBehaviour
 
     [SerializeField] GameObject explos;
     [SerializeField] Transform ShipP;
-        
 
+    [SerializeField] GameObject exploSound;
+
+    //[SerializeField] AudioClip ExploCli;
+    //[SerializeField] AudioSource Explo;
     // Start is called before the first frame update
     void Start()
     {
+        exploSound.SetActive(false);
         spaceshipSpeed = 30f;
         levelGame = 0;
         //Obtengo la escena en la que estoy y si es la de juego pongo el score a 0
@@ -55,18 +59,16 @@ public class InitGameScript : MonoBehaviour
 
         alive = true;
 
-        tiempoActual = Time.time;
-
-        
-   
+        tiempoActual = Time.time;        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
         if (spaceshipSpeed < maxSpeed && alive == true)
         {
+            exploSound.SetActive(false);
             spaceshipSpeed += 0.001f;
         }
 
@@ -135,27 +137,31 @@ public class InitGameScript : MonoBehaviour
         //print("La yukición fué realizada");
         alive = false;
         spaceshipSpeed = 0f;
+        exploSound.SetActive(true);
+        Ship.SetActive(false);
 
-        
-       
+
 
         Vector3 explosPos = new Vector3(ShipP.position.x, ShipP.position.y, ShipP.position.z);
         Instantiate(explos, explosPos, Quaternion.identity);
 
+        
+
+        //Explo.Play();
 
         Invoke("GameOver", 1f);
 
 
-       
 
     }
 
     void GameOver()
     {
-        instancia instanciadorObst = GameObject.Find("Instanciador").GetComponent<instancia>();
+        //instancia instanciadorObst = GameObject.Find("Instanciador").GetComponent<instancia>();
 
-        Ship.SetActive(false);
-
+        //Vector3 explosPos = new Vector3(ShipP.position.x, ShipP.position.y, ShipP.position.z);
+        //Instantiate(explos, explosPos, Quaternion.identity);        
+        
         SceneManager.LoadScene(0);
 
     }

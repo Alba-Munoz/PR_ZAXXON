@@ -8,6 +8,8 @@ public class GameOverScript : MonoBehaviour
 {
     [SerializeField] AudioSource boton;
 
+  
+
     [SerializeField] AudioClip clipBtn;
 
     int escenaAcargar;

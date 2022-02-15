@@ -89,7 +89,7 @@ public class SpaceShip : MonoBehaviour
             {
 
                 initGameScript.SendMessage("Morir");
-                Nave.SetActive(false);
+                //Nave.SetActive(false);
                 //Destroy(gameObject);
 
             }
