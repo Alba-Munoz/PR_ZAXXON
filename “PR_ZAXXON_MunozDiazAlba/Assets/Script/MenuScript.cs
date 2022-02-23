@@ -36,4 +36,10 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene(escenaAcargar);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+
+    }
+
 }

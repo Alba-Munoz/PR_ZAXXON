@@ -162,7 +162,7 @@ public class InitGameScript : MonoBehaviour
         //Vector3 explosPos = new Vector3(ShipP.position.x, ShipP.position.y, ShipP.position.z);
         //Instantiate(explos, explosPos, Quaternion.identity);        
         
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
 
     }
     public void Chocar(GameObject other)
